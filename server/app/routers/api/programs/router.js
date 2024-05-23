@@ -2,10 +2,12 @@ const express = require("express");
 
 const router = express.Router();
 
-const { programs, browse } = require("../../../controllers/programActions");
+const { browse, read } = require("../../../controllers/programActions");
 
-router.get("/", programs);
+// router.get("/", programs);
 
 router.get("/", browse);
+
+router.get("/:id", read);
 
 module.exports = router;
