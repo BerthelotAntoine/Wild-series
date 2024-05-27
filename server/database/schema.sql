@@ -13,7 +13,7 @@ create table item (
 
 create table category(
   id int unsigned primary key auto_increment not null,
-  name varchar(100) not null unique_key
+  name varchar(100) not null unique
 );
 
 create table program(
@@ -23,4 +23,6 @@ create table program(
   poster varchar(255) not null,
   country varchar(255) not null,
   year date not null
+  category_id int unsigned not null,
+  foreign key(category_id) references category(id)
 );
